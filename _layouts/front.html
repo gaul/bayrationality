@@ -4,21 +4,28 @@ layout: default
 
 <!-- one, two and then four card rows -->
 <div class="ui centered grid stackable">
-    {% assign counter = 0 %}
-    {% for post in site.posts %}
-        {% assign counter = counter | plus: 1 %}
-        {% if counter == 1 %}
-            <div class="eight wide column">
-                {% include card.html %}
+    {% for tag in site.tags %}
+        {% if tag[0] == "communication" %}
+            <div class="sixteen wide column section-heading">
+                <h1> Communication </h1>
             </div>
-        {% elsif counter == 2 %}
-            <div class="eight wide column">
-                {% include card.html %}
+            {% for post in tag[1] %}
+                <div class="eight wide column">
+                    {% include card.html %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    {% for tag in site.tags %}
+        {% if tag[0] != "communication" %}
+            <div class="sixteen wide column section-heading">
+                <h1> {{ tag[0] | capitalize }} </h1>
             </div>
-        {% else %}
-            <div class="four wide column">
-                {% include card.html %}
-            </div>
+            {% for post in tag[1] %}
+                <div class="four wide column">
+                    {% include card.html %}
+                </div>
+            {% endfor %}
         {% endif %}
     {% endfor %}
 </div>

@@ -70,6 +70,10 @@ header {
     display: block;
 }
 
+.section-heading {
+    text-align: center !important;
+}
+
 /* footer */
 
 footer {
