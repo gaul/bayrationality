@@ -19,20 +19,26 @@ layout: default
     {% capture tags %}
         {% for tag in site.tags %}
             {% if tag[0] != "communication" %}
-                {{ tag[0] }}
+                {{ tag[0] | split: ' ' | join: '-' }}
             {% endif %}
         {% endfor %}
     {% endcapture %}
-    {% assign sortedtags = tags | split:' ' | sort %}
+    {% assign sortedtags = tags | split: ' ' | sort %}
     {% for tag in sortedtags %}
+        {% assign splittag = tag | split: '-' %}
+        {% assign keytag = splittag | join: ' ' %}
+        {% capture titletag %}
+            {% for piece in splittag %}
+                {{ piece | capitalize }}
+            {% endfor %}
+        {% endcapture %}
         <div class="sixteen wide column section-heading">
-            <h1> {{ tag | capitalize }} </h1>
+            <h1> {{ titletag }} </h1>
         </div>
-        {% for post in site.tags[tag] %}
+        {% for post in site.tags[keytag] %}
             <div class="four wide column">
                 {% include card.html %}
             </div>
-            {{ post }}
         {% endfor %}
     {% endfor %}
 </div>
