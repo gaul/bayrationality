@@ -16,17 +16,24 @@ layout: default
             {% endfor %}
         {% endif %}
     {% endfor %}
-    {% for tag in site.tags %}
-        {% if tag[0] != "communication" %}
-            <div class="sixteen wide column section-heading">
-                <h1> {{ tag[0] | capitalize }} </h1>
+    {% capture tags %}
+        {% for tag in site.tags %}
+            {% if tag[0] != "communication" %}
+                {{ tag[0] }}
+            {% endif %}
+        {% endfor %}
+    {% endcapture %}
+    {% assign sortedtags = tags | split:' ' | sort %}
+    {% for tag in sortedtags %}
+        <div class="sixteen wide column section-heading">
+            <h1> {{ tag | capitalize }} </h1>
+        </div>
+        {% for post in site.tags[tag] %}
+            <div class="four wide column">
+                {% include card.html %}
             </div>
-            {% for post in tag[1] %}
-                <div class="four wide column">
-                    {% include card.html %}
-                </div>
-            {% endfor %}
-        {% endif %}
+            {{ post }}
+        {% endfor %}
     {% endfor %}
 </div>
 <div class="ui divider"></div>
