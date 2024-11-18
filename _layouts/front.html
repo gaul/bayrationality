@@ -4,22 +4,42 @@ layout: default
 
 <!-- one, two and then four card rows -->
 <div class="ui centered grid stackable">
-    {% assign counter = 0 %}
-    {% for post in site.posts %}
-        {% assign counter = counter | plus: 1 %}
-        {% if counter == 1 %}
-            <div class="eight wide column">
-                {% include card.html %}
+    {% for tag in site.tags %}
+        {% if tag[0] == "communication" %}
+            <div class="sixteen wide column section-heading">
+                <h1> Communication </h1>
             </div>
-        {% elsif counter == 2 %}
-            <div class="eight wide column">
-                {% include card.html %}
-            </div>
-        {% else %}
+            {% for post in tag[1] %}
+                <div class="eight wide column">
+                    {% include card.html %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    {% capture tags %}
+        {% for tag in site.tags %}
+            {% if tag[0] != "communication" %}
+                {{ tag[0] | split: ' ' | join: '-' }}
+            {% endif %}
+        {% endfor %}
+    {% endcapture %}
+    {% assign sortedtags = tags | split: ' ' | sort %}
+    {% for tag in sortedtags %}
+        {% assign splittag = tag | split: '-' %}
+        {% assign keytag = splittag | join: ' ' %}
+        {% capture titletag %}
+            {% for piece in splittag %}
+                {{ piece | capitalize }}
+            {% endfor %}
+        {% endcapture %}
+        <div class="sixteen wide column section-heading">
+            <h1> {{ titletag }} </h1>
+        </div>
+        {% for post in site.tags[keytag] %}
             <div class="four wide column">
                 {% include card.html %}
             </div>
-        {% endif %}
+        {% endfor %}
     {% endfor %}
 </div>
 <div class="ui divider"></div>
