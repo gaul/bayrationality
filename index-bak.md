@@ -21,6 +21,8 @@ Taco Tuesday: by Austin Chen, founder emeritus of Manifold. Check his [Manifold 
 
 Thursday Dinners in Berkeley: Advertised on the Discord server and Google group, alternating between a few restaurants on the northwest side of UC campus.
 
+[Lighthaven Sequences Reading Group](https://www.lesswrong.com/groups/LK6GNnKp8PDCkqcxx): Currently Tuesday, hosted by the Lighthaven team. They advertise on LessWrong.
+
 [Bay Area ACX Meetups](https://www.facebook.com/groups/566160007909175): For the ACX everywhere meetups twice per year, and some other sporadic events.
 
 [The Bayesian Choir](https://discord.gg/rfPYGCV): Usually meets every other Sunday near North Oakland, and more often during the fall to rehearse for the Solstice. Choir Director and primary organizer is Blake Jones, and coordination happens on the linked Discord server.
@@ -58,6 +60,6 @@ There are two AI safety coworking spaces in Berkeley. They sometime accept visit
 
 Most AI Safety events don't get advertised publicly, so get in contact with people in the community to know what's happening.
 
-*Last Updated: 2024-08-22*
+*Last Updated: 2024-09-17*
 
 *Leave a comment on [the LessWrong mirror](https://www.lesswrong.com/posts/hDefuqC2Rbnr8THYW/index-of-rationalist-groups-in-the-bay-area-july-2024) to suggest changes to this page.*
