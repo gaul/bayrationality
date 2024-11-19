@@ -79,8 +79,8 @@ header {
 footer {
     color: rgba(255, 255, 255, .75) !important;    
     background-color: black;
-    height: 6rem;
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .footer-wrapper { 
